@@ -29999,6 +29999,11 @@ var SearchParams = function SearchParams() {
       animal = _useState4[0],
       setAnimal = _useState4[1];
 
+  var _useState5 = (0, _react.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      breeds = _useState6[0],
+      setBreeds = _useState6[1];
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "search-params"
   }, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("label", {
@@ -30023,8 +30028,26 @@ var SearchParams = function SearchParams() {
     }
   }, /*#__PURE__*/_react.default.createElement("option", null, "All"), _pet.ANIMALS.map(function (animal) {
     return /*#__PURE__*/_react.default.createElement("option", {
+      key: animal,
       value: animal
     }, animal);
+  }))), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "animal"
+  }, "Breed", /*#__PURE__*/_react.default.createElement("select", {
+    id: "breed",
+    value: breeds,
+    onChange: function onChange(e) {
+      return setBreed(e.target.value);
+    },
+    onBlur: function onBlur(e) {
+      return setBreed(e.target.value);
+    },
+    disabled: breeds.length === 0
+  }, /*#__PURE__*/_react.default.createElement("option", null, "All"), breeds.map(function (breed) {
+    return /*#__PURE__*/_react.default.createElement("option", {
+      key: breed,
+      value: breed
+    }, breed);
   }))), /*#__PURE__*/_react.default.createElement("button", null, "Submit")));
 };
 
